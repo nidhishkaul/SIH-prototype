@@ -260,23 +260,19 @@ const Home = () => {
                 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
               >
                 <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-cyan-500 bg-clip-text text-transparent">
-                  AI-Powered Internship
+                  SIM-PM
                 </span>
                 <br />
-                <span className="text-gray-900 dark:text-white">
-                  Matchmaking for Students,
-                </span>
-                <br />
-                <span className="bg-gradient-to-r from-green-500 to-amber-500 bg-clip-text text-transparent">
-                  Industries & Policy Makers
+                <span className="text-gray-900 dark:text-white text-3xl md:text-4xl lg:text-5xl">
+                  Smart Internship Match Platform
                 </span>
               </motion.h1>
 
               <motion.p
                 variants={itemVariants}
-                className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-4xl mx-auto"
+                className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-12 max-w-4xl mx-auto"
               >
-                Fair, transparent, and efficient allocation powered by AI/ML + affirmative action policies
+                Connect talented students with perfect internship opportunities through intelligent matching technology
               </motion.p>
 
               <motion.div
@@ -301,8 +297,86 @@ const Home = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, delay: 0.8 }}
-                className="relative max-w-4xl mx-auto"
+                className="relative max-w-6xl mx-auto"
               >
+                {/* Hero Image Section */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                  <motion.div
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 1 }}
+                    className="relative"
+                  >
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                      <img
+                        src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                        alt="Students collaborating"
+                        className="w-full h-80 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-indigo-600/20 to-transparent"></div>
+                    </div>
+                    {/* Floating Cards */}
+                    <motion.div
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ duration: 3, repeat: Infinity }}
+                      className="absolute -top-4 -right-4 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-xl"
+                    >
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span className="text-sm font-medium text-gray-900 dark:text-white">95% Match Rate</span>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      animate={{ y: [0, 10, 0] }}
+                      transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+                      className="absolute -bottom-4 -left-4 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-xl"
+                    >
+                      <div className="flex items-center space-x-2">
+                        <Users className="w-4 h-4 text-indigo-600" />
+                        <span className="text-sm font-medium text-gray-900 dark:text-white">15K+ Students</span>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 1.2 }}
+                    className="relative"
+                  >
+                    <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+                      <img
+                        src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop"
+                        alt="Professional workplace"
+                        className="w-full h-80 object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-cyan-600/20 to-transparent"></div>
+                    </div>
+                    {/* Floating Cards */}
+                    <motion.div
+                      animate={{ y: [0, -8, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+                      className="absolute -top-4 -left-4 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-xl"
+                    >
+                      <div className="flex items-center space-x-2">
+                        <Building className="w-4 h-4 text-amber-600" />
+                        <span className="text-sm font-medium text-gray-900 dark:text-white">500+ Companies</span>
+                      </div>
+                    </motion.div>
+                    <motion.div
+                      animate={{ y: [0, 12, 0] }}
+                      transition={{ duration: 3.5, repeat: Infinity, delay: 2 }}
+                      className="absolute -bottom-4 -right-4 bg-white dark:bg-gray-800 rounded-lg p-4 shadow-xl"
+                    >
+                      <div className="flex items-center space-x-2">
+                        <div className="w-3 h-3 bg-cyan-500 rounded-full"></div>
+                        <span className="text-sm font-medium text-gray-900 dark:text-white">Real-time Matching</span>
+                      </div>
+                    </motion.div>
+                  </motion.div>
+                </div>
+
+                {/* Connection Visualization */}
                 <div className="grid grid-cols-3 gap-8 items-center">
                   {/* Students */}
                   <motion.div
@@ -310,20 +384,71 @@ const Home = () => {
                     transition={{ duration: 3, repeat: Infinity }}
                     className="text-center"
                   >
-                    <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <Users className="h-12 w-12 text-white" />
+                    <div className="relative">
+                      <div className="w-24 h-24 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <Users className="h-12 w-12 text-white" />
+                      </div>
+                      {/* Animated dots around the circle */}
+                      {[0, 1, 2, 3].map((i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute w-2 h-2 bg-green-400 rounded-full"
+                          style={{
+                            top: '50%',
+                            left: '50%',
+                            transformOrigin: '0 0',
+                          }}
+                          animate={{
+                            rotate: [0, 360],
+                            scale: [1, 1.5, 1],
+                          }}
+                          transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            delay: i * 0.5,
+                          }}
+                        />
+                      ))}
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 font-medium">Students</p>
                   </motion.div>
 
                   {/* AI Brain */}
                   <motion.div
-                    animate={{ rotate: [0, 360] }}
-                    transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
                     className="text-center"
                   >
-                    <div className="w-32 h-32 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl">
-                      <Brain className="h-16 w-16 text-white" />
+                    <div className="relative">
+                      <motion.div
+                        animate={{ rotate: [0, 360] }}
+                        transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+                        className="w-32 h-32 bg-gradient-to-br from-indigo-600 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-2xl"
+                      >
+                        <Brain className="h-16 w-16 text-white" />
+                      </motion.div>
+                      {/* Pulsing rings */}
+                      <motion.div
+                        className="absolute inset-0 border-2 border-indigo-400 rounded-full"
+                        animate={{
+                          scale: [1, 1.3, 1],
+                          opacity: [0.7, 0, 0.7],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                        }}
+                      />
+                      <motion.div
+                        className="absolute inset-0 border-2 border-purple-400 rounded-full"
+                        animate={{
+                          scale: [1, 1.5, 1],
+                          opacity: [0.5, 0, 0.5],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: 0.5,
+                        }}
+                      />
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 font-medium">AI Engine</p>
                   </motion.div>
@@ -334,8 +459,30 @@ const Home = () => {
                     transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
                     className="text-center"
                   >
-                    <div className="w-24 h-24 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                      <Building className="h-12 w-12 text-white" />
+                    <div className="relative">
+                      <div className="w-24 h-24 bg-gradient-to-br from-amber-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                        <Building className="h-12 w-12 text-white" />
+                      </div>
+                      {/* Animated building icons */}
+                      {[0, 1, 2].map((i) => (
+                        <motion.div
+                          key={i}
+                          className="absolute w-1 h-3 bg-amber-400 rounded-sm"
+                          style={{
+                            top: '20%',
+                            left: `${40 + i * 8}%`,
+                          }}
+                          animate={{
+                            height: [12, 20, 12],
+                            opacity: [0.6, 1, 0.6],
+                          }}
+                          transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: i * 0.3,
+                          }}
+                        />
+                      ))}
                     </div>
                     <p className="text-gray-600 dark:text-gray-300 font-medium">Industries</p>
                   </motion.div>
@@ -473,11 +620,70 @@ const Home = () => {
               className="text-center mb-16"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                AI Matchmaking in Action
+                Smart Matching in Action
               </h2>
               <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                Watch our intelligent algorithm connect students with their perfect opportunities
+                See how our platform connects students with their perfect opportunities
               </p>
+            </motion.div>
+
+            {/* Success Stories Images */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={showcaseInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16"
+            >
+              {[
+                {
+                  image: "https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+                  title: "Tech Internships",
+                  description: "Software development roles at leading tech companies"
+                },
+                {
+                  image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+                  title: "Business Analytics",
+                  description: "Data-driven roles in finance and consulting"
+                },
+                {
+                  image: "https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+                  title: "Creative Industries",
+                  description: "Design and marketing opportunities"
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={showcaseInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.4 + index * 0.2 }}
+                  whileHover={{ y: -10, scale: 1.02 }}
+                  className="relative group cursor-pointer"
+                >
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl group-hover:shadow-2xl transition-all duration-300">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-white font-bold text-lg mb-1">{item.title}</h3>
+                      <p className="text-white/90 text-sm">{item.description}</p>
+                    </div>
+                    {/* Animated overlay */}
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-cyan-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      whileHover={{
+                        background: [
+                          "linear-gradient(45deg, rgba(99, 102, 241, 0.2), rgba(6, 182, 212, 0.2))",
+                          "linear-gradient(45deg, rgba(6, 182, 212, 0.2), rgba(99, 102, 241, 0.2))"
+                        ]
+                      }}
+                      transition={{ duration: 2, repeat: Infinity }}
+                    />
+                  </div>
+                </motion.div>
+              ))}
             </motion.div>
 
             <motion.div
