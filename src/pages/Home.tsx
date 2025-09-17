@@ -690,7 +690,7 @@ const Home = () => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={showcaseInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1 }}
-              className="relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl"
+              className="relative bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-2xl overflow-hidden"
             >
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                 {/* Students Side */}
@@ -760,11 +760,11 @@ const Home = () => {
               </div>
 
               {/* Animated Connection Lines */}
-              <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 800 400">
+              <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" viewBox="0 0 800 400" style={{ zIndex: 1 }}>
                 {[1, 2, 3, 4].map((i) => (
                   <motion.path
                     key={i}
-                    d={`M200 ${80 + i * 60} Q400 200 600 ${80 + i * 60}`}
+                    d={`M150 ${60 + i * 80} Q400 200 650 ${60 + i * 80}`}
                     stroke="url(#matchGradient)"
                     strokeWidth="2"
                     fill="none"

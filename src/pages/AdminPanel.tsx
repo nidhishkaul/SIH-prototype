@@ -75,12 +75,17 @@ const AdminPanel = () => {
           style={{
             backgroundColor: color,
             left: `calc(${value}% - 12px)`,
-            boxShadow: `0 0 20px ${color}80`
+            boxShadow: `0 0 20px ${color}60`
           }}
           animate={{ 
-            boxShadow: `0 0 ${20 + Math.sin(Date.now() / 1000) * 5}px ${color}80` 
+            scale: [1, 1.1, 1],
+            boxShadow: [
+              `0 0 20px ${color}60`,
+              `0 0 30px ${color}80`,
+              `0 0 20px ${color}60`
+            ]
           }}
-          transition={{ duration: 2, repeat: Infinity }}
+          transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
         />
       </div>
     </motion.div>

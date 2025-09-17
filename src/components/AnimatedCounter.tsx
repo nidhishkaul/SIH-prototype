@@ -27,7 +27,8 @@ const AnimatedCounter: React.FC<AnimatedCounterProps> = ({
         if (!startTime) startTime = timestamp;
         const progress = Math.min((timestamp - startTime) / (duration * 1000), 1);
         
-        setCount(Math.floor(progress * end));
+        const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+        setCount(Math.floor(easeOutQuart * end));
         
         if (progress < 1) {
           animationFrame = requestAnimationFrame(animate);

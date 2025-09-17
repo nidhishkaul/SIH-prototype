@@ -75,8 +75,8 @@ const IndustryDashboard = () => {
       initial={{ opacity: 0, rotateY: -90 }}
       animate={{ opacity: 1, rotateY: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      whileHover={{ rotateY: 5, scale: 1.02 }}
-      className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer perspective-1000"
+      whileHover={{ y: -5, scale: 1.02 }}
+      className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 cursor-pointer"
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
@@ -123,7 +123,7 @@ const IndustryDashboard = () => {
             className="h-2 bg-gradient-to-r from-green-500 to-cyan-500 rounded-full"
             initial={{ width: 0 }}
             animate={{ width: `${candidate.match}%` }}
-            transition={{ duration: 1.5, delay: index * 0.1 }}
+            transition={{ duration: 1.5, delay: index * 0.1, ease: "easeOut" }}
           />
         </div>
       </div>
